@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  
+
   devise_scope :user do
    authenticated :user do
      root 'links#index', as: :authenticated_root
@@ -11,7 +11,14 @@ Rails.application.routes.draw do
    end
  end
 
+ get "/links" => "links#index"
+ get "/links/new" => "links#new"
+ post "/links" => "links#create"
+ get "/links/:id" => "links#show"
+ 
 
+
+ get "/:slug" => "visits#create"
 
 
 

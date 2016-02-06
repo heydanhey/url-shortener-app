@@ -1,0 +1,20 @@
+<h1>Your links</h1>
+
+<table class="table">
+  <tr>
+    <th>View Stats</th>
+    <th>Slug</th>
+    <th>Target URL</th>
+    <th>Created At</th>
+  </tr>
+  <% @links.each do |link| %>
+    <tr>
+      <td><%= link_to "Link ID: #{link.id}", "/links/#{link.id}" %></td>
+      <td><%= link_to "http://localhost:3000/#{link.slug}", link.slug %></td>
+      <td><%= link.target_url %></td>
+      <td><%= link.created_at %></td>
+    </tr>
+  <% end %>
+<table>
+
+<%= link_to "Add New Link", "/links/new" %>
