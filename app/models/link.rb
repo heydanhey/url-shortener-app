@@ -8,4 +8,8 @@ class Link < ActiveRecord::Base
     visits.count
   end
 
+  def get_slug
+    [*('a'..'z'), *('0'..'9')].shuffle[0,6].join
+  end
+
 end
